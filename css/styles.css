@@ -5,19 +5,19 @@
     --box-border-color: black;
     --box-bg-color: rgba(0, 0, 0, 0.555);
 
-    --label-bg-color: #F5EE9E;
+    --label-bg-color: #F9DAD0;
     --label-text-color: black;
 
     --footer-bg-color: #020112;
 
-    --btn-bg-color: #95E06C;
-    --btn-border-color: #7cb95b;
+    --btn-bg-color: #C5DCA0;
+    --btn-border-color: #9fb182;
     --btn-text-color: black;
-    --btn-hover-shadow: rgba(0, 0, 0, 0.5);
+    --btn-hover-shadow: #f5f2c481;
 
-    --btn-copy-bg-color: #F49E4C;
-    --btn-copy-text-color: white;
-    --btn-copy-hover-color: #F5EE9E;
+    --btn-copy-bg-color: #daa492;
+    --btn-copy-text-color: rgb(63, 53, 53);
+    --btn-copy-hover-color: #F9DAD0;
     
     --btn-copy-check-shadow: gray;
 }
@@ -59,7 +59,7 @@ a:hover {
 }
 
 .converter-btns:hover{
-    box-shadow: 0 0 6px var(--btn-hover-shadow);
+    box-shadow: 0 0 8px var(--btn-hover-shadow);
     background-color: var(--btn-bg-color);
 }
 

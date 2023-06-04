@@ -115,7 +115,7 @@ document.querySelectorAll('.btn-copy').forEach( btnCopy => {
         let copyIcon = this.innerHTML;
         /*Create checkmark icon*/
         let checkIcon = document.createElement('i');
-        checkIcon.className = "fa-solid fa-check icon-shadow";
+        checkIcon.className = "fa-solid fa-check";
         
         this.innerHTML = "";
         this.appendChild(checkIcon);
