@@ -32,9 +32,7 @@ function decimalToRoman(num) {
     alert("Roman numerals are only defined for positive integers up to 3,999!");
     clearAllInputs();
   }
-  //alert(numInRoman);+
-
-  //console.log(numInRoman);
+  
   return numInRoman;
 }
 
@@ -63,8 +61,7 @@ function romanToDecimal(str){
       alert("Not a valid roman numeral!");
       clearAllInputs(); //remove
     }
-    //alert(decimal);
-    //console.log(decimal);
+    
     return decimal;
 }
  
@@ -79,22 +76,6 @@ function isValidRomanNumeral(str){
 function isInteger(num){
   return num % 1 === 0;
 }
-
-// ... VALIDATIONS ...
-
-
-// --- DISPLAY RESULTS ---
-/*function displayRomanToDecimal(){
-  let romanNumeral = document.getElementById("input-roman").value;
-  document.getElementById('result-decimal').innerHTML = romanToDecimal(romanNumeral );
-}
-
-function displayDecimalToRoman(){
-  let decimalNumber = document.getElementById("input-decimal").value;
-  document.getElementById('result-roman').innerHTML = decimalToRoman(decimalNumber);
-}*/
-
-// ... DISPLAY RESULTS ...
 
 // Display results on same line as inputs
 let numberFields = [document.getElementById("roman-input"), document.getElementById("decimal-input")]
@@ -116,49 +97,38 @@ function convertOnButtonClick(){
   }
 }
 
-/*
-function displayResult(input, resultTextId){
-  document.getElementById(resultTextId).innerHTML = romanToDecimal(input);
-}*/
 
-
-/*let romanNumeral = document.getElementById("input-roman").value;
-let decimalNumber = document.getElementById("input-decimal").value;*/
-
-/*console.log(romanToDecimal(romanNumeral));
-console.log(decimalToRoman(decimalNumber));*/
-
-/*document.getElementById('btn-roman-to-decimal').onclick = (document.getElementById('result-decimal').innerHTML = romanToDecimal(romanNumeral)); */
-
-/*document.getElementById('btn-roman-to-decimal').addEventListener("click" ,displayRomanToDecimal);
-
-document.getElementById('btn-decimal-to-roman').addEventListener("click" ,displayDecimalToRoman);*/
-
-// COPY TO CLIPBOARD FUNTION
+// COPY TO CLIPBOARD FUNCTION
 function copyToClipboard(textId) {
   let textToCopy = document.getElementById(textId);
 
-  textToCopy.select();
   textToCopy.setSelectionRange(0, 99999);
 
   navigator.clipboard.writeText(textToCopy.value);
-
-  autohideAlert("Copied to clipboard!", 1000);
 }
 
-function autohideAlert(msg, duration){
+// CHANGE COPY ICON ON CLICK
+document.querySelectorAll('.btn-copy').forEach( btnCopy => {
+  btnCopy.addEventListener('click', function(clicked) {
+    return function(){
+      if(!clicked) {
+        let copyIcon = this.innerHTML;
+        /*Create checkmark icon*/
+        let checkIcon = document.createElement('i');
+        checkIcon.className = "fa-solid fa-check icon-shadow";
+        
+        this.innerHTML = "";
+        this.appendChild(checkIcon);
 
-  document.querySelector(".btn-copy").style.color = "red";
-  let alert = document.createElement("div");
-  /*alert.setAttribute("style", "position:absolute;top:50%;left:50%;background-color:white;");*/
-  alert.innerHTML = msg;
-  setTimeout(function(){alert.parentNode.removeChild(alert); 
-
-  document.querySelector(".btn-copy").style.color = "red";
-  },duration);
-  document.body.appendChild(alert);
-
-}
+        clicked = true;
+        setTimeout(function() {
+          this.innerHTML = copyIcon;
+          clicked = false;
+          }.bind(this), 800);
+        }
+    };
+  }(false), this);
+});
 
 document.getElementById('btn-clear').addEventListener('click', function (event) {
   clearAllInputs();

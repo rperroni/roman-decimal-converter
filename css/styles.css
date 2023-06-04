@@ -1,33 +1,109 @@
+:root {
+    --main-bg-color: #2D728F;
+    --main-text-color: black;
+
+    --box-border-color: black;
+    --box-bg-color: rgba(0, 0, 0, 0.555);
+
+    --label-bg-color: #F5EE9E;
+    --label-text-color: black;
+
+    --footer-bg-color: #020112;
+
+    --btn-bg-color: #95E06C;
+    --btn-border-color: #7cb95b;
+    --btn-text-color: black;
+    --btn-hover-shadow: rgba(0, 0, 0, 0.5);
+
+    --btn-copy-bg-color: #F49E4C;
+    --btn-copy-text-color: white;
+    --btn-copy-hover-color: #F5EE9E;
+    
+    --btn-copy-check-shadow: gray;
+}
+
 body {
     height: 100vh;
     width: auto;
-    background-color: rgb(168, 168, 168);
     align-items: center;
+    background-color: var(--main-bg-color);
 }
 
 main {
     height: 93vh;
-    background-color: aliceblue;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .btn-copy {
-    color: green !important;
+    color: var(--btn-copy-text-color);
+    background-color: var(--btn-copy-bg-color);
+    transition: all 200ms ease-out;
+}
+
+.btn-copy:hover {
+    background-color: var(--btn-copy-hover-color);
+}
+
+.converter-btns {
+    background-color: var(--btn-bg-color);
+    border-color: var(--btn-border-color);
+    transition: all 200ms ease-out;
+}
+
+.converter-btns:hover{
+    box-shadow: 0 0 6px var(--btn-hover-shadow);
+    background-color: var(--btn-bg-color);
+}
+
+.converter-btns:active {
+    background-color: var(--btn-bg-color);
+    border-color: var(--btn-border-color);
 }
 
 .conversion-box {
-    border: 2px solid black;
-    max-width: 50%;
+    border: 2px solid var(--box-border-color);
+    border-radius: 7px;
+    max-width: 30%;
+    background-color: var(--box-bg-color);
+}
+
+@media only screen and (max-width: 1400px) {
+    .conversion-box{
+        max-width: 50%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
     .conversion-box{
-        max-width: 100%;
+        max-width: 80%;
     }
 }
 
+.icon-shadow {
+    text-shadow: 0 0 3px var(--btn-copy-check-shadow);
+}
+
 .footer {
-    background-color: rgb(186, 186, 233);
+    background-color: var(--footer-bg-color);
+    background-image: linear-gradient(#00a1ab, var(--footer-bg-color));
+    color: white;
     text-align: center;
     /*margin: auto 0 0 0;*/
     height: 7vh;
+}
+
+.input-group-text {
+    background-color: var(--label-bg-color);
+}
+
+#point-hide{
+    color: var(--label-bg-color);
 }

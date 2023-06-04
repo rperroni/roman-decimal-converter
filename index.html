@@ -15,43 +15,39 @@
     </head>
 
     <body class="container-fluid">
-        <main class="row align-items-center">
+        <main class="d-flex align-items-center">
             <div class="container-sm conversion-box p-5">
 
-                <div class="input-fields">
-                    <div class="row">
-                        <div class="col-6 text-start">
-                            <label for="roman-input">Roman</label>
-                        </div>
-                        <button id="btn-copy-roman" class="btn-copy btn text-end col-6" onclick="copyToClipboard('roman-input')"><i class="fas fa-copy"></i></button>
-                    </div>
-                    <input type="text" id="roman-input" name="roman-input" class="form-control">
+                <div class="input-fields input-group">
+                    <span class="input-group-text">Roman<span id="point-hide">..</span></span>
+
+                    <input type="text" id="roman-input" name="roman-input" class="form-control" placeholder="MCCXXXIV">
+                        
+                    <button id="btn-copy-roman" class="btn-copy btn" onclick="copyToClipboard('roman-input')"><i class="fa-regular fa-clone"></i></button>
+                </div>
+              
+                <div class="input-fields my-4 input-group">
+                    <span class="input-group-text">Decimal</span>
+
+                    <input type="text" id="decimal-input" name="decimal-input" class="form-control" placeholder="1234">
+                    
+                    <button id="btn-copy-decimal" class="btn-copy btn" onclick="copyToClipboard('decimal-input')"><i class="fa-regular fa-clone"></i></button>
                 </div>
 
-                <div class="row my-4">
+                <div class="d-flex justify-content-around mt-4">
 
-                    <div class="col-sm-5 text-end">
-                        <button id="btn-convert" class=" btn btn-primary rounded-pill col-8" onclick="convertOnButtonClick()">
-                            <i class="fa-solid fa-arrows-rotate"></i>
+                    <div class="">
+                        <button id="btn-convert" class="btn converter-btns" onclick="convertOnButtonClick()">
+                            Convert
                         </button>
                     </div>
 
-                    <div class="col-sm-2"></div>
-
-                    <div class="col-sm-5 text-start">
-                        <button id="btn-clear" class="btn btn-primary rounded-pill col-8">Clear</button>
+                    <div class="">
+                        <button id="btn-clear" class="btn converter-btns" type="reset">
+                            Clear
+                        </button>
                     </div>
 
-                </div>
-                
-                <div class="input-fields">
-                    <div class="row">
-                        <div class="col-6 text-start">
-                            <label for="decimal-input">Decimal</label>
-                        </div>
-                        <button id="btn-copy-decimal" class="btn-copy btn text-end col-6" onclick="copyToClipboard('decimal-input')"><i class="fas fa-copy"></i></button>
-                    </div>
-                    <input type="text" id="decimal-input" name="decimal-input" class="form-control">
                 </div>
                 
             </div>
@@ -60,7 +56,7 @@
         <script type="text/javascript" src="js/logic.js"></script>
 
         <footer id="footer" class="footer row align-items-center">
-            <div id="signature" class="text-center my-4">By Rorry</div>
+            <div id="signature" class="text-center my-4">By <a href="https://github.com/rperroni" target="_blank" class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Rorry</a></div>
         </footer>
     </body>
 
