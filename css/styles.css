@@ -1,23 +1,23 @@
 :root {
-    --main-bg-color: #2D728F;
+    --main-bg-color: #E5DBB7;
     --main-text-color: black;
 
     --box-border-color: black;
-    --box-bg-color: rgba(0, 0, 0, 0.555);
+    --box-bg-color: #eed880;
 
-    --label-bg-color: #F9DAD0;
+    --label-bg-color: #FFF5E6;
     --label-text-color: black;
 
-    --footer-bg-color: #020112;
+    --footer-bg-color: #661a1c;
 
-    --btn-bg-color: #C5DCA0;
-    --btn-border-color: #9fb182;
-    --btn-text-color: black;
+    --btn-bg-color: #7F2122;
+    --btn-border-color: #661a1c;
+    --btn-text-color: #FFF5E6;
     --btn-hover-shadow: #f5f2c481;
 
-    --btn-copy-bg-color: #daa492;
-    --btn-copy-text-color: rgb(63, 53, 53);
-    --btn-copy-hover-color: #F9DAD0;
+    --btn-copy-bg-color: #D32929;
+    --btn-copy-text-color: #FFF5E6;
+    --btn-copy-hover-color: #e45252;
     
     --btn-copy-check-shadow: gray;
 }
@@ -53,6 +53,7 @@ a:hover {
 }
 
 .converter-btns {
+    color: var(--btn-text-color);
     background-color: var(--btn-bg-color);
     border-color: var(--btn-border-color);
     transition: all 200ms ease-out;
@@ -93,7 +94,7 @@ a:hover {
 
 .footer {
     background-color: var(--footer-bg-color);
-    background-image: linear-gradient(#00a1ab, var(--footer-bg-color));
+    background-image: linear-gradient(#D32929, var(--footer-bg-color));
     color: white;
     text-align: center;
     /*margin: auto 0 0 0;*/
